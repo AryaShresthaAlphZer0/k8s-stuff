@@ -19,3 +19,15 @@ spec:
           image: nginx:latest
           ports:
           - containerPort: 80
+          #for config map
+          env:
+            - name: APP_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: APP_NAME
+            - name: MODEL_VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MODEL_VERSION
