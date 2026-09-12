@@ -1,0 +1,3 @@
+A DaemonSet is a Kubernetes resource that makes sure a copy of a specific pod runs on every node (or a chosen subset of nodes) in your cluster.
+
+Key idea: Unlike a Deployment, where you specify a desired number of replicas and Kubernetes just schedules them wherever there's capacity, a DaemonSet ties pod count to node count. As nodes join the cluster, the DaemonSet controller automatically adds the pod to them. As nodes leave, those pods get garbage collected.
